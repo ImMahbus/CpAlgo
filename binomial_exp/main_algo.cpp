@@ -23,7 +23,7 @@ ll BinaryExponentiation::BinomialExpNaive(ll base, ll exp)
     return result;
 }
 
-ll BinaryExponentiation::binomialExpRec(ll base, int exp)
+ll BinaryExponentiation::binomialExpRec(ll base, ll exp)
 {
     if (exp == 0)
         return 1;
@@ -36,7 +36,7 @@ ll BinaryExponentiation::binomialExpRec(ll base, int exp)
     return result;
 }
 
-ll BinaryExponentiation::binomialExpIter(ll base, int exp)
+ll BinaryExponentiation::binomialExpIter(ll base, ll exp)
 {
     ll result = 1;
     while (exp > 0)
@@ -50,7 +50,7 @@ ll BinaryExponentiation::binomialExpIter(ll base, int exp)
     }
     return result;
 }
-ll BinaryExponentiation::binomialExpMod(ll base, int exp, int m)
+ll BinaryExponentiation::binomialExpMod(ll base, ll exp, ll m)
 {
     base = base % m;
     ll result = 1;
@@ -66,7 +66,7 @@ ll BinaryExponentiation::binomialExpMod(ll base, int exp, int m)
     return result;
 }
 
-ll BinaryExponentiation::binomialExpPrimeMod(ll base, int exp, int m)
+ll BinaryExponentiation::binomialExpPrimeMod(ll base, ll exp, ll m)
 {
     exp = exp % (m - 1);
     return binomialExpMod(base, exp, m);
