@@ -2,6 +2,7 @@
 using namespace std;
 
 typedef unsigned long long ll;
+
 class BinaryExponentiation
 {
 public:
