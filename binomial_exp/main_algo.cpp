@@ -10,7 +10,7 @@ public:
     ll binomialExpIter(ll base, int exp);            // iterative solution O(log(n)) (fastest among all of the above method)
     ll binomialExpMod(ll base, int exp, int m);      // same as above function with mod
     ll binomialExpPrimeMod(ll base, int exp, int m); // if m is prime, x^(exp) and x^(exp mod (m-1)) is same using fermat theoram
-    // best way to calculate Mod in m is prime
+    // best way to calculate Mod if m is prime
 };
 
 ll BinaryExponentiation::BinomialExpNaive(ll base, ll exp)
