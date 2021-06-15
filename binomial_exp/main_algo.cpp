@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define ll unsigned long long int
+typedef unsigned long long ll;
 class BinaryExponentiation
 {
 public:
