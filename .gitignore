@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 # compiled filed
 *.exe
 .vscode/
+=======
+# compiled files
+*.exe
+>>>>>>> fb2298eb44da12b2519815e3946b06eb039d83ea
