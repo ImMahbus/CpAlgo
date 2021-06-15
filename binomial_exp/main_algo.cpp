@@ -9,7 +9,7 @@ public:
     ll binomialExpRec(ll base, ll exp);             //using recursion O(log(n)) (Fast but uses extra space in stack)
     ll binomialExpIter(ll base, ll exp);            // iterative solution O(log(n)) (fastest among all of the above method)
     ll binomialExpMod(ll base, ll exp, ll m);      // same as above function with mod
-    ll binomialExpPrimeMod(ll base, int exp, ll m); // if m is prime, x^(exp) and x^(exp mod (m-1)) is same using fermat theoram
+    ll binomialExpPrimeMod(ll base, ll exp, ll m); // if m is prime, x^(exp) and x^(exp mod (m-1)) is same using fermat theoram
     // best way to calculate Mod if m is prime
 };
 
