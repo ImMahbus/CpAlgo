@@ -2,6 +2,7 @@
 # compiled filed
 *.exe
 .vscode/
+tempCodeRunnerFile.cpp
 =======
 # compiled files
 *.exe
