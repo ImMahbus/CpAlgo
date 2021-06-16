@@ -37,27 +37,31 @@ We will end up proving euclid algorithm
     equality
     Hence gcd(a, b) = gcd(b, c) = gcd(b, a - b)
 
+Time Complexity: log(min(a,b)) 
+For proof of Time complexity :
+         https://www.geeksforgeeks.org/time-complexity-of-euclidean-algorithm/
+
 */
 
 #include <iostream>
 using namespace std;
 
-class gcd
+class gcdEuclid
 {
 public:
-    int gcdeuclidIter(int a, int b);
-    int gcdeuclidRec(int a, int b);
+    int gcdEuclidIter(int a, int b);
+    int gcdEuclidRec(int a, int b);
     int lcm(int a, int b); // can be found using identity gcd(a,b)*lcm(a,b) = a*b
 };
 
-int gcd::gcdeuclidRec(int a, int b)
+int gcdEuclid::gcdEuclidRec(int a, int b)
 {
     if (b == 0)
         return a;
 
-    return gcdeuclidRec(b, a % b);
+    return gcdEuclidRec(b, a % b);
 }
-int gcd::gcdeuclidIter(int a, int b)
+int gcdEuclid::gcdEuclidIter(int a, int b)
 {
     while (b != 0)
     {
@@ -66,7 +70,91 @@ int gcd::gcdeuclidIter(int a, int b)
     }
     return a;
 }
-int gcd::lcm(int a, int b)
+int gcdEuclid::lcm(int a, int b)
 {
-    return (a * b) / gcdeuclidIter(a, b);
+    return (a * b) / gcdEuclidIter(a, b);
+}
+/*
+                             GCD using stein's Algorithm 
+
+            The modulo operator are bit slower than other basic arthematic operator like
+            addition, substraction. There is a bit of optimization that can be done using 
+            stein's algorithm which tries to overcome this by using bit shift rather than modulo operator.
+            Similar to euclid, this also tries to reduce the input into smaller number by using 
+            gcd(a, b)  = gcd(a, b - a);
+
+        Steps:
+        (i) If a or b is 0, return the non zero argument as gcd
+        (ii) If both a and b are even then use this trivial identity 
+                        gcd(a, b) = 2 * gcd(a/2, b/2)
+        (iii) If one of then is even and other is odd, then 2 cannot be the gcd so 
+             divide the even no by 2 till it become odd --> g(even, odd) = gcd(even/2, odd)
+        (iv) If both are odd, 
+                then gcd(large, small) = gcd((large-small)/2, small) 
+
+Deatil Explanation : https://iq.opengenus.org/binary-gcd-algorithm/
+
+*/
+class gcdStein
+{
+public:
+    int gcdSteinRec(int a, int b);
+    int gcdSteinIter(int a, int b);
+};
+
+int gcdStein::gcdSteinIter(int a, int b)
+{
+    if (a == 0)
+        return b;
+    if (b == 0)
+        return a;
+    int commonPowerTwo = 0;
+    while ((a | b) & 1 == 0)
+    {
+        a >>= 1;
+        b >>= 1;
+        commonPowerTwo++;
+    }
+    while ((a & 1) == 0)
+        a >>= 1;
+    while (b != 0)
+    {
+        while ((b & 1) == 0)
+            b >>= 1;
+        if (a > b)
+            swap(a, b);
+        b = b - a;
+    }
+    return a << commonPowerTwo;
+}
+
+int gcdStein::gcdSteinRec(int a, int b)
+{
+    if (a == b)
+        return a;
+    if (a == 0)
+        return b;
+    if (b == 0)
+        return a;
+
+    if (a & 1)
+    {
+        if (b & 1)
+        {
+            if (a > b)
+                swap(a, b);
+            return gcdSteinRec((b - a) >> 1, a);
+        }
+        else
+            return gcdSteinRec(a, b >> 1);
+    }
+    else
+    {
+        if (b & 1)
+        {
+            return gcdSteinRec(a >> 1, b);
+        }
+        else
+            return gcdSteinRec(a >> 1, b >> 1) << 1;
+    }
 }
