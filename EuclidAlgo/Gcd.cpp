@@ -1,7 +1,7 @@
 /*
-                             GCD using Eculid Algorithm 
+                             GCD using euclid Algorithm 
                              
-Eculid Algorithm: gcd(a,b) = gcd(b, a % b);
+euclid Algorithm: gcd(a,b) = gcd(b, a % b);
 
 Proof:
 
@@ -16,7 +16,7 @@ then doing this step iteratively ,
         .
 till    gcd(a,b) = gcd(b,r)  where r = a - x*b => r = a % b
 
-We will end up proving eculid algorithm
+We will end up proving euclid algorithm
 
 (iv) To prove : gcd(a,b) = gcd(b, a - b)
     let say  a - b = c -- (i)
@@ -45,18 +45,18 @@ using namespace std;
 class gcd
 {
 public:
-    int gcdEculidIter(int a, int b);
-    int gcdEculidRec(int a, int b);
+    int gcdeuclidIter(int a, int b);
+    int gcdeuclidRec(int a, int b);
 };
 
-int gcd::gcdEculidRec(int a, int b)
+int gcd::gcdeuclidRec(int a, int b)
 {
     if (b == 0)
         return a;
 
-    return gcdEculidRec(b, a % b);
+    return gcdeuclidRec(b, a % b);
 }
-int gcd::gcdEculidIter(int a, int b)
+int gcd::gcdeuclidIter(int a, int b)
 {
     while (b != 0)
     {
