@@ -47,7 +47,7 @@ class gcd
 public:
     int gcdeuclidIter(int a, int b);
     int gcdeuclidRec(int a, int b);
-    int lcm(int a, int b);
+    int lcm(int a, int b); // can be found using identity gcd(a,b)*lcm(a,b) = a*b
 };
 
 int gcd::gcdeuclidRec(int a, int b)
