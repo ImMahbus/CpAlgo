@@ -47,6 +47,7 @@ class gcd
 public:
     int gcdeuclidIter(int a, int b);
     int gcdeuclidRec(int a, int b);
+    int lcm(int a, int b);
 };
 
 int gcd::gcdeuclidRec(int a, int b)
@@ -64,4 +65,8 @@ int gcd::gcdeuclidIter(int a, int b)
         swap(a, b);
     }
     return a;
+}
+int gcd::lcm(int a, int b)
+{
+    return (a * b) / gcdeuclidIter(a, b);
 }
