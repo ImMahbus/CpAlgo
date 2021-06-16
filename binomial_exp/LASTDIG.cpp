@@ -1,5 +1,5 @@
 /*
-Problem Link : https://www.spoj.com/problems/ZSUM/
+Problem Link : https://www.spoj.com/problems/LASTDIG/
 Problem set from cp algorithm: https://cp-algorithms.com/algebra/binary-exp.html
 */
 
