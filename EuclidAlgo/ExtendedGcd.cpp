@@ -23,7 +23,7 @@
                 2 = 10 - 4*2
     Here, we manage to write gcd(a, b) i.e 2 as a linear combination of 
     10 and 4 
-    But we want to write it as a linear combination of 58 and 42.
+    But we want to write it as a linear combination of 58 and 24.
     To do that we have to use above equations i.e (2),(1)
     and build our solution recursively.
 
