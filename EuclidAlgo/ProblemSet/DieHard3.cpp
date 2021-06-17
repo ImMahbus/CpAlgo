@@ -23,10 +23,8 @@ This set of values have a underlying structure to then. More formally
 
 Now because of this fact, we can say that c has to be divisible by gcd(A,B)
 only then this linear combination will have a interger coefficient.
-{Extended Euclid Algorithm}
-
+{ Bézout's Lemma }    
 */
-
 string PossibleToMeasure(int a, int b, int c)
 {
     if (c > max(a, b))
