@@ -74,6 +74,7 @@ int ExtendedEuclid::gcdExtendedRec(int a, int b, int &x, int &y)
 {
     if (b == 0)
     {
+        // if b == 0, then a will contain the gcd , hence a*1 + b*0 = g 
         x = 1;
         y = 0;
         return a;
