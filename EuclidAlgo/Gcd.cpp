@@ -92,7 +92,7 @@ int gcdEuclid::lcm(int a, int b)
         (iv) If both are odd, 
                 then gcd(large, small) = gcd((large-small)/2, small) 
 
-Deatil Explanation : https://iq.opengenus.org/binary-gcd-algorithm/
+Detail Explanation : https://iq.opengenus.org/binary-gcd-algorithm/
 
 */
 class gcdStein
